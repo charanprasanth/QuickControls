@@ -223,3 +223,75 @@ app/src/main/
     ├── values/strings.xml          ← inline-inventory synonyms
     └── xml/shortcuts.xml           ← App Actions capability + bindings
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+``
+The QuickControls Android app is installed but long-pressing the app icon 
+on the home screen does NOT show any shortcuts (e.g. "Turn on Torch" / 
+"Turn off Torch"). They should appear as quick actions.
+
+Please debug and fix this issue. Investigate the following:
+
+1. **Check shortcuts.xml**
+ - Confirm res/xml/shortcuts.xml exists with proper <shortcut> entries 
+ for torch_on and torch_off
+ - Each <shortcut> must have: shortcutId, shortcutShortLabel, 
+ shortcutLongLabel, and a valid <intent> block
+ - The <intent> must have android:action, android:targetPackage, 
+ and android:targetClass set correctly
+
+2. **Check the manifest**
+ - The launcher activity (MainActivity) must have this meta-data INSIDE 
+ the <activity> tag (not outside):
+ ```
+ <​meta-data
+ android:name="android.app.shortcuts"
+ android:resource="@xml/shortcuts"/>
+ ```
+ - The activity referenced in shortcuts.xml's targetClass must exist 
+ and be declared in the manifest
+ - VoiceActionActivity must be android:exported="true"
+
+3. **Check string resources**
+ - shortcutShortLabel and shortcutLongLabel should reference @string 
+ resources, not hardcoded text
+ - Confirm those strings exist in strings.xml
+
+4. **Verify with ADB after fixing**
+ - Run: adb shell cmd shortcut get-shortcuts com.poc.quickcontrols
+ - This should list both torch_on and torch_off shortcuts
+ - If it returns empty, shortcuts.xml is not being picked up
+
+5. **Common issues to check:**
+ - shortcuts.xml in wrong folder (should be res/xml/, not res/values/)
+ - <capability> tags WITHOUT <shortcut> tags — App Actions capabilities 
+ alone don't create home-screen shortcuts; you need BOTH
+ - meta-data outside the launcher activity tag
+ - Wrong activity referenced in targetClass (typo, wrong package)
+
+Please:
+1. Show me the current shortcuts.xml and AndroidManifest.xml
+2. Identify what's wrong
+3. Fix it
+4. After fixing, run "adb shell cmd shortcut get-shortcuts com.poc.quickcontrols" 
+ and confirm both shortcuts are listed
+5. Then verify by long-pressing the app icon on the device — shortcuts 
+ should appear
+```
+
+---
+
+The most common cause: **`<capability>` tags create voice triggers but NOT home screen shortcuts.** You need separate `<shortcut>` tags for the long-press menu. This prompt forces Claude Code to check that exact thing. 🎯
+
+
