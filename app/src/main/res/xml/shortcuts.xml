@@ -1,18 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  App Actions registration.
-
-  One <capability> declares the BII (actions.intent.OPEN_APP_FEATURE) and the
-  intent template Assistant will fire. Each <shortcut> below binds a different
-  "feature" value (with its inline-inventory synonyms from strings.xml) to that
-  same capability. This is the canonical App Actions pattern: one BII +
-  capability, many shortcut bindings.
-
-  To add another voice-controllable feature later:
-    1. Add a synonyms <string-array> in strings.xml.
-    2. Add a <shortcut> entry below pointing at it.
-    3. Add a matching QuickAction + ActionHandler.
--->
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
 
     <capability android:name="actions.intent.OPEN_APP_FEATURE">
@@ -27,122 +13,266 @@
     </capability>
 
     <!-- Torch -->
-    <shortcut android:shortcutId="torch_on" android:enabled="true"
+    <shortcut
+        android:shortcutId="torch_on"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_torch_on">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="torch_on" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/torch_on_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="torch_off" android:enabled="true"
+    <shortcut
+        android:shortcutId="torch_off"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_torch_off">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="torch_off" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/torch_off_synonyms" />
         </capability-binding>
     </shortcut>
 
     <!-- DND -->
-    <shortcut android:shortcutId="dnd_on" android:enabled="true"
+    <shortcut
+        android:shortcutId="dnd_on"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_dnd_on">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="dnd_on" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/dnd_on_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="dnd_off" android:enabled="true"
+    <shortcut
+        android:shortcutId="dnd_off"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_dnd_off">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="dnd_off" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/dnd_off_synonyms" />
         </capability-binding>
     </shortcut>
 
     <!-- Volume -->
-    <shortcut android:shortcutId="volume_mute" android:enabled="true"
+    <shortcut
+        android:shortcutId="volume_mute"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_volume_mute">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="volume_mute" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/volume_mute_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="volume_unmute" android:enabled="true"
+    <shortcut
+        android:shortcutId="volume_unmute"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_volume_unmute">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="volume_unmute" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/volume_unmute_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="volume_up" android:enabled="true"
+    <shortcut
+        android:shortcutId="volume_up"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_volume_up">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="volume_up" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/volume_up_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="volume_down" android:enabled="true"
+    <shortcut
+        android:shortcutId="volume_down"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_volume_down">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="volume_down" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/volume_down_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="volume_max" android:enabled="true"
+    <shortcut
+        android:shortcutId="volume_max"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_volume_max">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="volume_max" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/volume_max_synonyms" />
         </capability-binding>
     </shortcut>
 
     <!-- Dark mode -->
-    <shortcut android:shortcutId="dark_on" android:enabled="true"
+    <shortcut
+        android:shortcutId="dark_on"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_dark_on">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="dark_mode_on" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/dark_on_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="dark_off" android:enabled="true"
+    <shortcut
+        android:shortcutId="dark_off"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_dark_off">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="dark_mode_off" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/dark_off_synonyms" />
         </capability-binding>
     </shortcut>
 
     <!-- Ringer -->
-    <shortcut android:shortcutId="ringer_silent" android:enabled="true"
+    <shortcut
+        android:shortcutId="ringer_silent"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_ringer_silent">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="ringer_silent" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/ringer_silent_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="ringer_vibrate" android:enabled="true"
+    <shortcut
+        android:shortcutId="ringer_vibrate"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_ringer_vibrate">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="ringer_vibrate" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/ringer_vibrate_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="ringer_normal" android:enabled="true"
+    <shortcut
+        android:shortcutId="ringer_normal"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_ringer_normal">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="ringer_normal" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/ringer_normal_synonyms" />
         </capability-binding>
     </shortcut>
 
     <!-- Local VPN -->
-    <shortcut android:shortcutId="vpn_connect" android:enabled="true"
+    <shortcut
+        android:shortcutId="vpn_connect"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_vpn_connect">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="vpn_connect" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/vpn_connect_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="vpn_disconnect" android:enabled="true"
+    <shortcut
+        android:shortcutId="vpn_disconnect"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_vpn_disconnect">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="vpn_disconnect" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/vpn_disconnect_synonyms" />
         </capability-binding>
     </shortcut>
 
     <!-- Composite: Work Mode -->
-    <shortcut android:shortcutId="work_on" android:enabled="true"
+    <shortcut
+        android:shortcutId="work_on"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_work_on">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="work_mode_on" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/work_on_synonyms" />
         </capability-binding>
     </shortcut>
-    <shortcut android:shortcutId="work_off" android:enabled="true"
+    <shortcut
+        android:shortcutId="work_off"
+        android:enabled="true"
         android:shortcutShortLabel="@string/shortcut_work_off">
+        <intent
+            android:action="com.poc.quickcontrols.action.VOICE"
+            android:targetPackage="com.poc.quickcontrols"
+            android:targetClass="com.poc.quickcontrols.action.VoiceActionActivity">
+            <extra android:name="feature" android:value="work_mode_off" />
+        </intent>
         <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
             <parameter-binding android:key="feature" android:value="@array/work_off_synonyms" />
         </capability-binding>
