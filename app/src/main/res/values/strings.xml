@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuickControls</string>
+
+    <string name="shortcut_torch_on">light up the window</string>
+    <string name="shortcut_torch_off">shut the window</string>
+    <string name="shortcut_dnd_on">zen mode</string>
+    <string name="shortcut_dnd_off">open the gates</string>
+    <string name="shortcut_volume_mute">hush the room</string>
+    <string name="shortcut_volume_unmute">wake the speakers</string>
+    <string name="shortcut_volume_up">pump it up</string>
+    <string name="shortcut_volume_down">ease it down</string>
+    <string name="shortcut_volume_max">blast the speakers</string>
+    <string name="shortcut_dark_on">nightfall</string>
+    <string name="shortcut_dark_off">sunrise</string>
+    <string name="shortcut_ringer_silent">library mode</string>
+    <string name="shortcut_ringer_vibrate">buzz mode</string>
+    <string name="shortcut_ringer_normal">loud mode</string>
+    <string name="shortcut_vpn_connect">raise the shield</string>
+    <string name="shortcut_vpn_disconnect">drop the shield</string>
+    <string name="shortcut_work_on">tunnel vision</string>
+    <string name="shortcut_work_off">free me</string>
+
+    <!--
+      Custom voice vocabulary. These phrases are deliberately uncommon so
+      Google Assistant does NOT short-circuit them with its own torch /
+      volume / DND handlers. The user still says "in QuickControls" at the
+      end so Assistant routes through App Actions to us.
+    -->
+    <string-array name="torch_on_synonyms">
+        <item>torch_on</item><item>light up the window</item><item>open the window</item>
+        <item>lantern on</item><item>ignite the torch</item><item>fire up the lamp</item>
+    </string-array>
+    <string-array name="torch_off_synonyms">
+        <item>torch_off</item><item>shut the window</item><item>close the window</item>
+        <item>lantern off</item><item>kill the lamp</item><item>douse the torch</item>
+    </string-array>
+
+    <string-array name="dnd_on_synonyms">
+        <item>dnd_on</item><item>zen mode</item><item>raise the bubble</item>
+        <item>do not bother me</item><item>ghost mode on</item><item>go invisible</item>
+    </string-array>
+    <string-array name="dnd_off_synonyms">
+        <item>dnd_off</item><item>open the gates</item><item>drop the bubble</item>
+        <item>ghost mode off</item><item>i\'m back</item>
+    </string-array>
+
+    <string-array name="volume_mute_synonyms">
+        <item>volume_mute</item><item>hush the room</item>
+        <item>kill the sound</item><item>drop the audio</item>
+    </string-array>
+    <string-array name="volume_unmute_synonyms">
+        <item>volume_unmute</item><item>wake the speakers</item>
+        <item>bring back sound</item><item>audio on</item>
+    </string-array>
+    <string-array name="volume_up_synonyms">
+        <item>volume_up</item><item>pump it up</item>
+        <item>crank it</item><item>more juice</item>
+    </string-array>
+    <string-array name="volume_down_synonyms">
+        <item>volume_down</item><item>ease it down</item>
+        <item>cool the sound</item><item>less juice</item>
+    </string-array>
+    <string-array name="volume_max_synonyms">
+        <item>volume_max</item><item>blast the speakers</item>
+        <item>full blast</item><item>go loud</item>
+    </string-array>
+
+    <string-array name="dark_on_synonyms">
+        <item>dark_mode_on</item><item>nightfall</item>
+        <item>lights out</item><item>go dark</item>
+    </string-array>
+    <string-array name="dark_off_synonyms">
+        <item>dark_mode_off</item><item>sunrise</item>
+        <item>lights on</item><item>go bright</item>
+    </string-array>
+
+    <string-array name="ringer_silent_synonyms">
+        <item>ringer_silent</item><item>library mode</item>
+        <item>mute the phone</item><item>go silent</item>
+    </string-array>
+    <string-array name="ringer_vibrate_synonyms">
+        <item>ringer_vibrate</item><item>buzz mode</item>
+        <item>shake mode</item><item>tickle mode</item>
+    </string-array>
+    <string-array name="ringer_normal_synonyms">
+        <item>ringer_normal</item><item>loud mode</item>
+        <item>bell mode</item><item>go normal</item>
+    </string-array>
+
+    <string-array name="vpn_connect_synonyms">
+        <item>vpn_connect</item><item>raise the shield</item>
+        <item>tunnel up</item><item>cloak on</item><item>go private</item>
+    </string-array>
+    <string-array name="vpn_disconnect_synonyms">
+        <item>vpn_disconnect</item><item>drop the shield</item>
+        <item>tunnel down</item><item>cloak off</item><item>go public</item>
+    </string-array>
+
+    <string-array name="work_on_synonyms">
+        <item>work_mode_on</item><item>tunnel vision</item><item>focus zone</item>
+        <item>lock me in</item><item>deep work</item>
+    </string-array>
+    <string-array name="work_off_synonyms">
+        <item>work_mode_off</item><item>free me</item><item>exit the zone</item>
+        <item>unlock me</item><item>shallow work</item>
+    </string-array>
+</resources>
